@@ -117,4 +117,250 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="damageLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="damageLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
+  </data>
+  <data name="damageLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="damageLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 37</value>
+  </data>
+  <data name="damageLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="damageLabel.Text" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="&gt;&gt;damageLabel.Name" xml:space="preserve">
+    <value>damageLabel</value>
+  </data>
+  <data name="&gt;&gt;damageLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;damageLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;damageLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fireRateLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fireRateLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fireRateLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="fireRateLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 12</value>
+  </data>
+  <data name="fireRateLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 37</value>
+  </data>
+  <data name="fireRateLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="fireRateLabel.Text" xml:space="preserve">
+    <value>Fire Rate</value>
+  </data>
+  <data name="&gt;&gt;fireRateLabel.Name" xml:space="preserve">
+    <value>fireRateLabel</value>
+  </data>
+  <data name="&gt;&gt;fireRateLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fireRateLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fireRateLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="magazineSizeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="magazineSizeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
+  </data>
+  <data name="magazineSizeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="magazineSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>474, 12</value>
+  </data>
+  <data name="magazineSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 37</value>
+  </data>
+  <data name="magazineSizeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="magazineSizeLabel.Text" xml:space="preserve">
+    <value>Magazine Size</value>
+  </data>
+  <data name="&gt;&gt;magazineSizeLabel.Name" xml:space="preserve">
+    <value>magazineSizeLabel</value>
+  </data>
+  <data name="&gt;&gt;magazineSizeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;magazineSizeLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;magazineSizeLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="reloadTimeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="reloadTimeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
+  </data>
+  <data name="reloadTimeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="reloadTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>705, 12</value>
+  </data>
+  <data name="reloadTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 37</value>
+  </data>
+  <data name="reloadTimeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="reloadTimeLabel.Text" xml:space="preserve">
+    <value>Reload Time</value>
+  </data>
+  <data name="&gt;&gt;reloadTimeLabel.Name" xml:space="preserve">
+    <value>reloadTimeLabel</value>
+  </data>
+  <data name="&gt;&gt;reloadTimeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reloadTimeLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;reloadTimeLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="damageValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 32pt</value>
+  </data>
+  <data name="damageValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 52</value>
+  </data>
+  <data name="damageValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 56</value>
+  </data>
+  <data name="damageValue.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;damageValue.Name" xml:space="preserve">
+    <value>damageValue</value>
+  </data>
+  <data name="&gt;&gt;damageValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;damageValue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;damageValue.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="fireRateValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 32pt</value>
+  </data>
+  <data name="fireRateValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 52</value>
+  </data>
+  <data name="fireRateValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 56</value>
+  </data>
+  <data name="fireRateValue.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;fireRateValue.Name" xml:space="preserve">
+    <value>fireRateValue</value>
+  </data>
+  <data name="&gt;&gt;fireRateValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fireRateValue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fireRateValue.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="magazineValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 32pt</value>
+  </data>
+  <data name="magazineValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>481, 52</value>
+  </data>
+  <data name="magazineValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 56</value>
+  </data>
+  <data name="magazineValue.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;magazineValue.Name" xml:space="preserve">
+    <value>magazineValue</value>
+  </data>
+  <data name="&gt;&gt;magazineValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;magazineValue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;magazineValue.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="reloadTimeValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 32pt</value>
+  </data>
+  <data name="reloadTimeValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>712, 52</value>
+  </data>
+  <data name="reloadTimeValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 56</value>
+  </data>
+  <data name="reloadTimeValue.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;reloadTimeValue.Name" xml:space="preserve">
+    <value>reloadTimeValue</value>
+  </data>
+  <data name="&gt;&gt;reloadTimeValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reloadTimeValue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;reloadTimeValue.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>908, 385</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Time To Kill Calculator</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
