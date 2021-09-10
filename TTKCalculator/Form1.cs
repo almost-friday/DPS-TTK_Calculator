@@ -40,7 +40,7 @@ namespace TTKCalculator
 
 
         // Algorithm that calculates the TTK and DPS based on the inputs.
-        private decimal calculateTTK(decimal damage, decimal fireRate, int magSize, decimal reloadSpeed, decimal enemyHealth  =  100)
+        private decimal calculateTTK(decimal damage, decimal fireRate, decimal magSize, decimal reloadSpeed, decimal enemyHealth  =  100)
         {
             if (damage < 1) damage = 1; // Preventing the possibility of an endless loop 
             if (fireRate < 0) fireRate = 0;
@@ -48,7 +48,7 @@ namespace TTKCalculator
             if (reloadSpeed < 0) reloadSpeed = 0;
 
             int shotsTaken = 0;
-            int ammoInMag = magSize;
+            int ammoInMag = (int)magSize;
             decimal timeTaken = 0;
             decimal dps = CalculateDPS(damage, fireRate);
 
@@ -64,7 +64,7 @@ namespace TTKCalculator
                 if (ammoInMag <= 0)
                 {
                     // timeTaken += reloadSpeed;
-                    ammoInMag = magSize;
+                    ammoInMag = (int)magSize;
                 }
             }
 
