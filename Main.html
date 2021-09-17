@@ -2,35 +2,30 @@
 <html>
 <head>
     <script type="text/javascript" src="Calculator.js"></script>
-    <title> DPS/TTK Calculator </title>
+    <title>DPS/TTK Calculator</title>
 </head>
 
 <body>
-    <h1>
-        Haggets and Friday's DPS and TTK Calculator!!
-    </h1>
+    <h1>Haggets and Friday's DPS and TTK Calculator!!</h1>
 
     <!-- Number inputs where the user enters weapon properties -->
-    <div>
-        <label for="Damage">Damage</label>
-        <input id="DamageEntry" type="number" name="Damage">
-    </div>
-    <div>
-        <label for="FireRateEntry">Fire Rate</label>
-        <input id="FireRateEntry" type="number" name="FireRateEntry">
-    </div>
-    <div>
-        <label for="MagazineSizeEntry">Magazine Size</label>
-        <input id="MagazineSizeEntry" type="number" name="MagazineSizeEntry">
-    </div>
-    <div>
-        <label for="ReloadSpeedEntry">Reload Speed</label>
-        <input id="ReloadSpeedEntry" type="number" name="ReloadSpeedEntry">
+    <div id="entries">
+        <label for="damage"">Damage:</label>
+        <input id="damageEntry" type="number" name="damage" oninput="update()">
+
+        <label for="fireRateEntry">Fire Rate:</label>
+        <input id="fireRateEntry" type="number" name="fireRateEntry">
+
+        <label for="magazineSizeEntry">Magazine Size:</label>
+        <input id="magazineSizeEntry" type="number" name="magazineSizeEntry">
+
+        <label for="reloadSpeedEntry">Reload Speed:</label>
+        <input id="reloadSpeedEntry" type="number" name="reloadSpeedEntry">
     </div>
 
-    <div>
-        <label for="TimeToKillEntry">Time To Kill:</label>
-        <output id="TimeToKillResult" for="DamageEntry FireRateEntry MagazineSizeEntry ReloadSpeedEntry"></output>
+    <div id="result">
+        <label for="timeToKillEntry">Time To Kill:</label>
+        <output id="timeToKillResult" for="damageEntry fireRateEntry magazineSizeEntry reloadSpeedEntry"></output>
     </div>
 </body>
 </html>
