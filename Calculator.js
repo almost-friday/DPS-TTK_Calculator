@@ -1,44 +1,98 @@
-// Helper functions
-let FireShot = magazine => magazine > 0 ? --magazine : false;
+//Data Object
+const information = {
+    timeToKill: null,
+    damagePerSecond: null,
+    totalTime: 0
+};
 
-function Reload(magazineSize, reloadSpeed, totalTime) { return (magazineSize); }
+for (const field of document.getElementsByClassName("timeToKillInput")) {
+    Object.defineProperty(
+        information,
+        field.name,
+        {
+            get() {
+                return parseFloat(field.value || 0);
+            },
+            set(value) {
+                value = parseFloat(value || 0);
+                
+                if (value > 0) {
+                    console.log("test");
+                    field.value = value;
+                }
+                else {
+                    field.value = 0;
+                }
 
-// Main calculation
-function TimeToKill(damage, fireRate, magazineSize, reloadSpeed, health) {
-    let timeToKill = 0;
-    let currentMagCapacity = magazineSize;
+                return value;
+            }
+        }
+    );
+}
 
-    currentMagCapacity = FireShot(currentMagCapacity);
-    console.log(currentMagCapacity);
-    if (currentMagCapacity === 0) {
-        currentMagCapacity, timeToKill = Reload(magazineSize, reloadSpeed, timeToKill);
-        console.log(currentMagCapacity);
-        console.log(timeToKill);
-        console.log("Hellooo");
-    }
+information.currentMagazineSize = information.magazineSize;
+
+console.log("Initialized");
 
     /*
-    let timer = 0;
-    if (damage <= 0) {
-        ttk = 0;
-        return;
+function information(damage, fireRate, magazineSize, reloadSpeed, enemyHealth) {
+    this.damage = damage.value;
+    this.fireRate = fireRate.value;
+    this.magazineSize = magazineSize.value;
+    this.reloadSpeed = reloadSpeed.value;
+    this.enemyHealth = enemyHealth.value;
+    
+    this.currentMagazineSize = this.magazineSize;
+    this.timeToKill = null;
+    this.damagePerSecond = null;
+    this.totalTime = 0;
+    console.log("Initialized");
     }
-    if (fireRate <= 0) fireRate = 0;
-    ttk = damage * fireRate;
-    console.log(ttk);
     */
 
-    return timeToKill;
+// Main calculation
+function TimeToKill(stats) {
+
+
+    while (true) {
+        //stats.currentMagazineSize--;
+        console.log('Ammo in current mag: ' + stats.currentMagazineSize);
+        stats.currentMagazineSize -= 1;
+        console.log('Ammo in current mag: ' + stats.currentMagazineSize);
+
+        stats.enemyHealth -= stats.damage;
+        console.log("Bang!");
+        if (stats.enemyHealth <= 0) break;
+        
+        stats.totalTime += stats.fireRate.value;
+        if (stats.currentMagazineSize <= 0) {
+            stats.currentMagazineSize = stats.magazineSize;
+            stats.totalTime += stats.reloadSpeed;
+            console.log("Reloading!");
+        } 
+    }
+    console.log(stats.currentMagazineSize);
+    console.log(stats.totalTime);
+
+    return stats.totalTime;
 }
+
+
 
 // Calculation update
 function Update() {
-    const [damage, fireRate, magazineSize, reloadSpeed, enemyHealth] = document.getElementsByTagName("input");
+    const [damage, fireRate, magazineSize, reloadSpeed, enemyHealth] = document.getElementsByClassName("timeToKillInput");
     const timeToKill = document.getElementById("timeToKillResult");
 
-    if (damage.value && fireRate.value && magazineSize.value && reloadSpeed.value && enemyHealth.value) {
+    information.damage = damage.value;
+    information.fireRate = fireRate.value;
+    information.magazineSize = magazineSize.value;
+    information.reloadSpeed = reloadSpeed.value;
+    information.enemyHealth = enemyHealth.value;
+
+    if (information.damage && information.fireRate && information.magazineSize && information.reloadSpeed && information.enemyHealth) {
         console.log("Updated!");
-        totalTime = TimeToKill(damage.value, fireRate.value, magazineSize.value, reloadSpeed.value, enemyHealth.value);
+        totalTime = TimeToKill(information);
         timeToKill.value = totalTime;
     }
 }

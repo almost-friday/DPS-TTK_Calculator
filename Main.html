@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="Calculator.js"></script>
+    <script type="text/javascript" src="Calculator.js" defer></script>
     <title>DPS/TTK Calculator</title>
 </head>
 
@@ -14,24 +14,31 @@
     <!-- Number inputs where the user enters weapon properties -->
     <div id="entries">
         <label for="damage">Damage:</label>
-        <input id="damageEntry" type="number" name="damage" oninput="Update()">
+        <input class="timeToKillInput" id="damageEntry" name="damage" type="number" oninput="Update()">
 
         <label for="fireRateEntry">Fire Rate:</label>
-        <input id="fireRateEntry" type="number" name="fireRate" oninput="Update()">
+        <input class="timeToKillInput" id="fireRateEntry" name="fireRate" type="number" oninput="Update()">
 
         <label for="magazineSizeEntry">Magazine Size:</label>
-        <input id="magazineSizeEntry" type="number" name="magazineSize" oninput="Update()">
+        <input class="timeToKillInput" id="magazineSizeEntry" name="magazineSize" type="number" oninput="Update()">
 
         <label for="reloadSpeedEntry">Reload Speed:</label>
-        <input id="reloadSpeedEntry" type="number" name="reloadSpeed" oninput="Update()">
+        <input class="timeToKillInput" id="reloadSpeedEntry" name="reloadSpeed" type="number" oninput="Update()">
 
-        <label for="health">Enemy health:</label>
-        <input id="healthEntry" type="number" name="health" value=100 oninput="Update()">
+        <label for="enemyHealth">Enemy health:</label>
+        <input class="timeToKillInput" id="enemyHealthEntry" name="enemyHealth" type="number" value=100 oninput="Update()">
     </div>
 
     <div id="result">
-        <label for="timeToKillEntry">Time To Kill:</label>
-        <output id="timeToKillResult" for="damageEntry fireRateEntry magazineSizeEntry reloadSpeedEntry healthEntry"></output>
+        <div>
+            <label for="timeToKillEntry">Time To Kill:</label>
+            <output id="timeToKillResult" for="damageEntry fireRateEntry magazineSizeEntry reloadSpeedEntry healthEntry"></output>
+        </div>
+
+        <div>
+            <label for="damagePerSecond">Damage Per Second:</label>
+            <output id="damagePerSecondEntry" for="damageEntry fireRateEntry magazineSizeEntry reloadSpeedEntry healthEntry"></output>
+        </div>
     </div>
 </body>
 </html>
