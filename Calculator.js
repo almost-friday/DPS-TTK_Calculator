@@ -1,8 +1,10 @@
 //Data Object
 const information = {
-    timeToKill: null,
-    damagePerSecond: null,
-    totalTime: 0
+    timeToKill: 0,
+    damagePerSecond: 0,
+    totalTime: 0,
+    currentMagazineSize: 0,
+    currentEnemyHealth: 0
 };
 
 for (const field of document.getElementsByClassName("timeToKillInput")) {
@@ -17,7 +19,6 @@ for (const field of document.getElementsByClassName("timeToKillInput")) {
                 value = parseFloat(value || 0);
                 
                 if (value > 0) {
-                    console.log("test");
                     field.value = value;
                 }
                 else {
@@ -29,8 +30,6 @@ for (const field of document.getElementsByClassName("timeToKillInput")) {
         }
     );
 }
-
-information.currentMagazineSize = information.magazineSize;
 
 console.log("Initialized");
 
@@ -52,35 +51,28 @@ function information(damage, fireRate, magazineSize, reloadSpeed, enemyHealth) {
 
 // Main calculation
 function TimeToKill(stats) {
-
-
     while (true) {
-        //stats.currentMagazineSize--;
-        console.log('Ammo in current mag: ' + stats.currentMagazineSize);
-        stats.currentMagazineSize -= 1;
-        console.log('Ammo in current mag: ' + stats.currentMagazineSize);
+        // console.log(stats.totalTime);
+        // console.log('Ammo in current mag: ' + stats.currentMagazineSize);
+        stats.currentMagazineSize--;
 
-        stats.enemyHealth -= stats.damage;
-        console.log("Bang!");
-        if (stats.enemyHealth <= 0) break;
+        stats.currentEnemyHealth = stats.currentEnemyHealth - stats.damage;
+        if (stats.currentEnemyHealth <= 0) break;
         
-        stats.totalTime += stats.fireRate.value;
+        stats.totalTime = stats.totalTime + (stats.fireRate / 60); // i don't know matf
         if (stats.currentMagazineSize <= 0) {
             stats.currentMagazineSize = stats.magazineSize;
-            stats.totalTime += stats.reloadSpeed;
+            stats.totalTime = stats.totalTime + stats.reloadSpeed;
             console.log("Reloading!");
         } 
     }
-    console.log(stats.currentMagazineSize);
-    console.log(stats.totalTime);
 
     return stats.totalTime;
 }
 
-
-
 // Calculation update
 function Update() {
+    console.log("wtf");
     const [damage, fireRate, magazineSize, reloadSpeed, enemyHealth] = document.getElementsByClassName("timeToKillInput");
     const timeToKill = document.getElementById("timeToKillResult");
 
@@ -90,9 +82,13 @@ function Update() {
     information.reloadSpeed = reloadSpeed.value;
     information.enemyHealth = enemyHealth.value;
 
+    information.currentEnemyHealth = information.enemyHealth;
+    information.currentMagazineSize = information.magazineSize;
+
     if (information.damage && information.fireRate && information.magazineSize && information.reloadSpeed && information.enemyHealth) {
         console.log("Updated!");
         totalTime = TimeToKill(information);
-        timeToKill.value = totalTime;
+        timeToKill.value = `${Math.fround(information.totalTime)} seconds.`;
+        information.totalTime = 0;
     }
 }
