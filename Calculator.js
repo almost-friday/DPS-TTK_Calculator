@@ -68,10 +68,9 @@ function TimeToKill(stats) {
     return 0;
 }
 
-
-
 // Calculation update
 function Update() {
+    console.log("wtf");
     const [damage, fireRate, magazineSize, reloadSpeed, enemyHealth] = document.getElementsByClassName("timeToKillInput");
     const timeToKill = document.getElementById("timeToKillResult");
 
@@ -80,6 +79,9 @@ function Update() {
     information.magazineSize = magazineSize.value;
     information.reloadSpeed = reloadSpeed.value;
     information.enemyHealth = enemyHealth.value;
+
+    information.currentEnemyHealth = information.enemyHealth;
+    information.currentMagazineSize = information.magazineSize;
 
     if (information.damage && information.fireRate && information.magazineSize && information.reloadSpeed && information.enemyHealth) {
 
