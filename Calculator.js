@@ -1,8 +1,12 @@
 //Data Object
 const information = {
-    timeToKill: null,
-    damagePerSecond: null
+    ttk: null,
+    dps: null
 };
+
+const [damage, fireRate, magazineSize, reloadSpeed, enemyHealth] = document.getElementsByClassName("timeToKillInput");
+const timeToKillElement = document.getElementById("timeToKillResult");
+const damagePerSecondElement = document.getElementById("damagePerSecondResult");
 
 // Populates information with several important properties directly from the document.
 for (const field of document.getElementsByClassName("timeToKillInput")) {
@@ -37,42 +41,44 @@ console.log("Initialized");
 
 // Main calculation
 function TimeToKill(stats) {
-    let totalTime = 0;
-    stats.currentMagazineSize = stats.magazineSize;
-
     //Checking for common errors
     if (stats.magazineSize < 1) return -1;
     if (stats.damage < 1) return -2;
+    if (stats.fireRate <= 0) return -3;
 
-    damagePerSecond = stats.damage * stats.fireRate;
+    let _totalTime = 0;
+    let _dps = stats.damage * (1 / stats.fireRate);
+    let _enemyHealth = stats.enemyHealth;
+
+    let _currentMag = stats.magazineSize;
 
     while (true) {
-        stats.currentMagazineSize -= 1;
-        console.log('Ammo in current mag: ' + stats.currentMagazineSize);
+        _currentMag -= 1;
+        console.log('Ammo in current mag: ' + _currentMag);
 
-        stats.enemyHealth -= stats.damage;
-        if (stats.enemyHealth <= 0) break;
+        _enemyHealth -= stats.damage;
+        if (_enemyHealth <= 0) break;
         
-        totalTime += stats.fireRate;
+        _totalTime += stats.fireRate;
 
         //Reload if magazine depleted
-        if (stats.currentMagazineSize <= 0) {            
+        if (_currentMag <= 0) {            
             console.log("Reloading!");
-            stats.currentMagazineSize = stats.magazineSize;
-            totalTime += stats.reloadSpeed;
+            _currentMag = stats.magazineSize;
+            _totalTime += stats.reloadSpeed;
         } 
     }
-    console.log('Total time elapsed: ' + totalTime);
+    console.log('Total time elapsed: ' + _totalTime);
 
-    stats.timeToKill = totalTime;
+    stats.ttk = _totalTime;
+    stats.dps = _dps;
     return 0;
 }
 
 // Calculation update
 function Update() {
     console.log("wtf");
-    const [damage, fireRate, magazineSize, reloadSpeed, enemyHealth] = document.getElementsByClassName("timeToKillInput");
-    const timeToKill = document.getElementById("timeToKillResult");
+
 
     information.damage = damage.value;
     information.fireRate = fireRate.value;
@@ -81,7 +87,6 @@ function Update() {
     information.enemyHealth = enemyHealth.value;
 
     information.currentEnemyHealth = information.enemyHealth;
-    information.currentMagazineSize = information.magazineSize;
 
     if (information.damage && information.fireRate && information.magazineSize && information.reloadSpeed && information.enemyHealth) {
 
@@ -89,17 +94,21 @@ function Update() {
 
         switch (totalTime) {
             case 0:
-                timeToKill.value = information.timeToKill + ' seconds';
+                timeToKillElement.value = information.ttk + ' seconds';
+                damagePerSecondElement.value = information.dps + ' damage per second';
                 break;
             case -1:
-                timeToKill.value = 'The magazine size must be greater than 0!';
+                console.log('The magazine size must be greater than 0!');
                 break;
             case -2:
-                timeToKill.value = 'The damage must be greater than 0!';
+                console.log('The damage must be greater than 0!');
+                break;
+            case -3:
+                console.log("The fire rate must be above 0!");
                 break;
         
             default:
-                timeToKill.value = null;
+                timeToKillElement.value = null;
                 console.log('Error code does not exist!!');
                 break;
         }
