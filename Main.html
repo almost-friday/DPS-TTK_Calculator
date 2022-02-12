@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="Calculator.js" defer></script>
     <title>DPS/TTK Calculator</title>
+    
+    <!--Font links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -13,32 +19,45 @@
 
     <!-- Number inputs where the user enters weapon properties -->
     <div id="entries">
-        <label for="damage">Damage:</label>
-        <input class="timeToKillInput" id="damageEntry" name="damage" type="number" value=0 oninput="Update()">
+        <div>
+            <label for="damage">Damage:</label>
+            <br>
+            <input class="timeToKillInput" id="damageEntry" name="damage" type="number" value=0 oninput="Update()">
+        </div>
 
-        <label for="fireRateEntry">Fire Rate:</label>
-        <input class="timeToKillInput" id="fireRateEntry" name="fireRate" type="number" value=0 oninput="Update()">
+        <div>
+            <label for="fireRateEntry">Fire Rate:</label>
+            <br>
+            <input class="timeToKillInput" id="fireRateEntry" name="fireRate" type="number" value=0 oninput="Update()">
+        </div>
 
-        <label for="magazineSizeEntry">Magazine Size:</label>
-        <input class="timeToKillInput" id="magazineSizeEntry" name="magazineSize" type="number" value=0 oninput="Update()">
+        <div>        
+            <label for="magazineSizeEntry">Mag Size:</label>
+            <br>
+            <input class="timeToKillInput" id="magazineSizeEntry" name="magazineSize" type="number" value=0 oninput="Update()">
+        </div>
 
-        <label for="reloadSpeedEntry">Reload Speed:</label>
-        <input class="timeToKillInput" id="reloadSpeedEntry" name="reloadSpeed" type="number" value=0 oninput="Update()">
-
-        <label for="enemyHealth">Enemy health:</label>
-        <input class="timeToKillInput" id="enemyHealthEntry" name="enemyHealth" type="number" value=100 oninput="Update()">
+        <div>
+            <label for="reloadSpeedEntry">Reload Speed:</label>
+            <br>
+            <input class="timeToKillInput" id="reloadSpeedEntry" name="reloadSpeed" type="number" value=0 oninput="Update()">
+         </div>
+         <div>
+            <label for="enemyHealth">Enemy health:</label>
+            <br>
+            <input class="timeToKillInput" id="enemyHealthEntry" name="enemyHealth" type="number" value=100 oninput="Update()">
+        </div>
     </div>
 
     <div id="result">
-        <div>
             <label for="timeToKillEntry">Time To Kill:</label>
+            <br>
             <output id="timeToKillResult" for="damageEntry fireRateEntry magazineSizeEntry reloadSpeedEntry healthEntry"></output>
-        </div>
-
-        <div>
+            <br>
+            <br>
             <label for="damagePerSecond">Damage Per Second:</label>
+            <br>
             <output id="damagePerSecondEntry" for="damageEntry fireRateEntry magazineSizeEntry reloadSpeedEntry healthEntry"></output>
-        </div>
     </div>
 </body>
 </html>
