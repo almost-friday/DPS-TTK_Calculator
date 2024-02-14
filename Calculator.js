@@ -43,7 +43,7 @@ console.log("Initialized");
 function TimeToKill(stats) {
     //Checking for common errors
     if (stats.magazineSize < 1) return -1;
-    if (stats.damage < 1) return -2;
+    if (stats.damage <= 0) return -2;
     if (stats.fireRate <= 0) return -3;
 
     let _totalTime = 0;
@@ -77,14 +77,11 @@ function TimeToKill(stats) {
 
 // Calculation update
 function Update() {
-    console.log("wtf");
-
-
-    information.damage = damage.value;
-    information.fireRate = fireRate.value;
-    information.magazineSize = magazineSize.value;
-    information.reloadSpeed = reloadSpeed.value;
-    information.enemyHealth = enemyHealth.value;
+    //information.damage = parseFloat(String(damage.value));
+    // information.fireRate = parseFloat(fireRate.value);
+    // information.magazineSize = parseFloat(magazineSize.value);
+    // information.reloadSpeed = parseFloat(reloadSpeed.value);
+    // information.enemyHealth = parseFloat(enemyHealth.value);
 
     information.currentEnemyHealth = information.enemyHealth;
 
