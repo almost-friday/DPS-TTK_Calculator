@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="data:,">
     <script type="text/javascript" src="Calculator.js" defer></script>
     <title>DPS/TTK Calculator</title>
     
@@ -20,33 +19,33 @@
 
     <!-- Number inputs where the user enters weapon properties -->
     <div id="entries">
-        <div>   
+        <div>
             <label for="damage">Damage:</label>
             <br>
-            <input class="timeToKillInput" id="damageEntry" name="damage" type="number" step=".01" value=0  oninput="Update(this)">
+            <input class="timeToKillInput" id="damageEntry" name="damage" type="number" step=".01" value=20 oninput="Update()">
         </div>
 
         <div>
             <label for="fireRateEntry">Fire Rate:</label>
             <br>
-            <input class="timeToKillInput" id="fireRateEntry" name="fireRate" type="number" step=".01" value=0  oninput="Update(this)">
+            <input class="timeToKillInput" id="fireRateEntry" name="fireRate" type="number" step=".01" value=0 oninput="Update()">
         </div>
 
         <div>        
             <label for="magazineSizeEntry">Mag Size:</label>
             <br>
-    <input class="timeToKillInput" id="magazineSizeEntry" name="magazineSize" type="number" value=0  oninput="Update(this)">
+    <input class="timeToKillInput" id="magazineSizeEntry" name="magazineSize" type="number" value=0 oninput="Update()">
         </div>
 
         <div>
             <label for="reloadSpeedEntry">Reload Speed:</label>
             <br>
-            <input class="timeToKillInput" id="reloadSpeedEntry" name="reloadSpeed" type="number" step=".01" value=0  oninput="Update(this)">
+            <input class="timeToKillInput" id="reloadSpeedEntry" name="reloadSpeed" type="number" step=".01" value=0 oninput="Update()">
          </div>
          <div>
             <label for="enemyHealth">Enemy health:</label>
             <br>
-            <input class="timeToKillInput" id="enemyHealthEntry" name="enemyHealth" type="number" step=".01" value=100  oninput="Update(this)">
+            <input class="timeToKillInput" id="enemyHealthEntry" name="enemyHealth" type="number" step=".01" value=100 oninput="Update()">
         </div>
     </div>
 
