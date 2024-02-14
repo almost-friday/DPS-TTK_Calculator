@@ -76,7 +76,7 @@ function TimeToKill(stats) {
 }
 // Calculation update
 function Update(context) {
-    console.assert(context);
+    console.log(context);
     return;
     information.damage = damage.value;
     information.fireRate = fireRate.value;
