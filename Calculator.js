@@ -10,6 +10,7 @@ const damagePerSecondElement = document.getElementById("damagePerSecondResult");
 
 // Populates information with several important properties directly from the document.
 for (const field of document.getElementsByClassName("timeToKillInput")) {
+    field.addEventListener('onInput', TestUpdate(this))
     Object.defineProperty(
         information,
         field.name,
@@ -74,12 +75,11 @@ function TimeToKill(stats) {
     stats.dps = _dps;
     return 0;
 }
-
+function TestUpdate(context){
+    console.log(context);
+}
 // Calculation update
 function Update() {
-    console.log("wtf");
-
-
     information.damage = damage.value;
     information.fireRate = fireRate.value;
     information.magazineSize = magazineSize.value;
